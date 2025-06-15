@@ -37,7 +37,8 @@ request.setAttribute("list",list);
                     
                     <td>
                         <button type="submit" class="btn btn-primary"> Edit </button>
-                        <button type="submit" class="btn btn-warning"> Delete </button>
+                        <a href="deleteemployee.jsp?id=${e.empId}" class="btn btn-danger" 
+                           onclick="return confirm('Are you sure ! Want to delete this Employee?');"> Delete </a>
                     </td>
                     
                 </tr>

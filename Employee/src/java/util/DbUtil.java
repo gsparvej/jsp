@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 public class DbUtil {
 
-     private static Connection con = null;
+    private static Connection con = null;
     private static String url = "jdbc:mysql://localhost:3306/jsp";
     private static String user = "root";
     private static String password = "1234";

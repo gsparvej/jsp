@@ -36,8 +36,8 @@ request.setAttribute("list",list);
                     <td>${e.getSalary()}</td>
                     
                     <td>
-                        <button type="submit" class="btn btn-primary"> Edit </button>
-                        <a href="deleteemployee.jsp?id=${e.empId}" class="btn btn-danger" 
+                        <a href="editemployeeform.jsp?empId=${e.empId}" class="btn btn-primary"> Edit </a>
+                        <a href="deleteemployee.jsp?empId=${e.empId}" class="btn btn-danger" 
                            onclick="return confirm('Are you sure ! Want to delete this Employee?');"> Delete </a>
                     </td>
                     

@@ -5,13 +5,13 @@
 --%>
 
 
-<jsp:useBean class="model.Employee" id="p" />
+<jsp:useBean class="model.Employee" id="e" />
 <%@page import="dao.EmployeeDao" %>
-<jsp:setProperty name="p" property="*" />
+<jsp:setProperty name="e" property="*" />
 
 
 <%
-    EmployeeDao.deleteEmployee(p.getEmpId());
+    EmployeeDao.deleteEmployee(e.getEmpId());
     
     response.sendRedirect("index.jsp");
     

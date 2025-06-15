@@ -10,7 +10,9 @@
     <div class="container my-2 ">
         <div class="row">
              <div class="col-md-5">
-                  <button type="submit" class="btn btn-success text-center" > Add Student </button>
+                 
+                 <a href="student.jsp">Add Student </a>
+<!--                  <button type="submit" class="btn btn-success text-center" >  </button>-->
     </div>
             <div class="col-md-2">
                 

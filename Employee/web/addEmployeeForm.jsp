@@ -8,7 +8,7 @@
     </div>
 <!--    start form-->
 
-<<form action="addEmployee.jsp" method="post">
+<form action="addEmployee.jsp" method="post">
     <div  class="row">
         <div class="col-md-6">  
             <label for="" class="form-label"> Name </label>

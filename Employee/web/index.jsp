@@ -13,9 +13,9 @@ request.setAttribute("list",list);
 
 %>
 
-<div class="container">
+<div class="container border border-danger my-3">
     
-    <h1 class="text-center"> All Employee </h1>
+    <h1 class="text-center bg-danger" > All Employee </h1>
     <table class="table table-striped">
         
         <thead>

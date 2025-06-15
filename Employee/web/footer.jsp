@@ -12,7 +12,7 @@
       </div>
       <div class="col mb-3"></div>
       <div class="col mb-3">
-         <h5>Section</h5>
+         <h5>Section A</h5>
          <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
@@ -22,7 +22,7 @@
          </ul>
       </div>
       <div class="col mb-3">
-         <h5>Section</h5>
+         <h5>Section B</h5>
          <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
@@ -32,7 +32,7 @@
          </ul>
       </div>
       <div class="col mb-3">
-         <h5>Section</h5>
+         <h5>Section C</h5>
          <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>

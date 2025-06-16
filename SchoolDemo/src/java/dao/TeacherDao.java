@@ -129,4 +129,30 @@ public class TeacherDao {
     return t;
     
     }
+    
+    
+    public static int updateTeacher(Teacher t){
+    int status=0;
+    sql="update teachers set tName=?, tDepartment=?, tSalary=?,tAddress=?, tContact=? where tId=?";
+    
+        try {
+            ps=SchUtil.getCon().prepareStatement(sql);
+            ps.setString(1, t.gettName());
+            ps.setString(2, t.gettDepartment());
+            ps.setFloat(3, t.gettSalary());
+            ps.setString(4, t.gettAddress());
+            ps.setString(5, t.gettContact());
+            ps.setInt(6, t.gettId());
+            
+            
+            status = ps.executeUpdate();
+            
+            ps.close();
+            SchUtil.getCon().close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(TeacherDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    return status;
+    }
 }

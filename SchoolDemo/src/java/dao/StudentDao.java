@@ -1,4 +1,3 @@
-
 package dao;
 
 import java.sql.PreparedStatement;
@@ -11,20 +10,17 @@ import java.util.logging.Logger;
 import model.Student;
 import util.SchUtil;
 
-
 public class StudentDao {
-    
+
     static PreparedStatement ps;
     static ResultSet rs;
     static String sql;
 
-    
-    
-    
     public static int saveStudent(Student s) {
 
         int status = 0;
-        sql = "insert into students(stuName, stuClass, stuGroup, stuAddress, stuContact) values(?,?,?,?,?)";
+        
+        sql = "insert into students(stuName, stuClass, stuGroup, stuAddress, stuContact)values(?,?,?,?,?)";
 
         try {
             ps = SchUtil.getCon().prepareStatement(sql);
@@ -33,60 +29,53 @@ public class StudentDao {
             ps.setString(3, s.getStuGroup());
             ps.setString(4, s.getStuAddress());
             ps.setString(5, s.getStuContact());
-            
-             status=ps.executeUpdate();
-            
+
+            status = ps.executeUpdate();
+
             ps.close();
             SchUtil.getCon().close();
-            
-            
-            
+
+            System.out.println(status);
+
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
-       return status;
-       
-}
-    
-    
-    
+
+        return status;
+
+    }
+
     public static List<Student> getAllStudents() {
 
         List<Student> students = new ArrayList<>();
-        
+
         sql = "select * from students";
-       
+
         try {
             ps = SchUtil.getCon().prepareStatement(sql);
-            rs=ps.executeQuery();
-            
-            while(rs.next()){
-            
-               Student s=new Student(rs.getInt("stuId"),
-                       rs.getString("stuName"),
-                       rs.getString("stuClass"),
-                       rs.getString("stuGroup"), 
-                       rs.getString("stuAddress"),
-                       rs.getString("stuContact")
-               
-               );
-               
-            students.add(s);
-            
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                Student s = new Student(rs.getInt("stuId"),
+                        rs.getString("stuName"),
+                        rs.getString("stuClass"),
+                        rs.getString("stuGroup"),
+                        rs.getString("stuAddress"),
+                        rs.getString("stuContact")
+                );
+
+                students.add(s);
+
             }
             rs.close();
             ps.close();
             SchUtil.getCon().close();
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+
         return students;
     }
 }
-
-

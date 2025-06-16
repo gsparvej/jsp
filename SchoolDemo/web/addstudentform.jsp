@@ -15,19 +15,27 @@
         <div class="row">
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label"> Student Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Write Your Name">
+                <input type="text" class="form-control" id="stuName" name="stuName" placeholder="Write Your Name">
             </div>
 
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">Student Class</label>
-                <input type="text" class="form-control" id="email" name="email" placeholder="Ten">
+                <select class="form-select" name="stuClass" aria-label="Default select example">
+                    <option selected>Select Anyone</option>
+                    <option value="Six">Six</option>
+                    <option value="Seven">Seven</option>
+                    <option value="Eight">Eight</option>
+                    <option value="Nine">Nine</option>
+                    <option value="Ten">Ten</option>
+                    
+                </select>
             </div>        
         </div>
         <!-- start 2nd row-->
         <div class="row mt-3">
             <div class="col-md-6">
                 <label  class="form-label">Student Group</label>
-                <select class="form-select" name="subject" aria-label="Default select example">
+                <select class="form-select" name="stuGroup" aria-label="Default select example">
                     <option selected>Select Anyone</option>
                     <option value="Science">Science</option>
                     <option value="Commerce">Commerce</option>

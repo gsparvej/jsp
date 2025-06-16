@@ -9,11 +9,11 @@
 <%@page import="dao.StudentDao"%>
 <%@page import="java.util.*"%>
 
-<%@include file="header.jsp" %>
 
 <% 
     
- List<Student> list = StudentDao.getAllStudents();
+
+List<Student> list = StudentDao.getAllStudents();
 request.setAttribute("list", list);
 
 %>
@@ -35,42 +35,30 @@ request.setAttribute("list", list);
             </tr>
         </thead>
         <tbody>
-            
+            <con:forEach items="${list}" var="s">
+                <tr>
+                    <td>${s.getStuId()}</td>
+                    <td>${s.getStuName()}</td>
+                    <td>${s.getStuClass()}</td>
+                    <td>${s.getStuGroup()}</td>
+                    <td>${s.getStuAddress()}</td>
+                    <td>${s.getStuContact()}</td>
+                     <td>
+                        <a href="#" class="btn btn-primary"> Edit </a>
+                        <a href="#" class="btn btn-danger" 
+                           onclick="return confirm('Are you sure ! Want to delete this Employee?');"> Delete </a>
+                    </td>
+                   
+                    
+                </tr>
+                
+            </con:forEach>
             
             
         </tbody>
             
         
     </table>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   
     </div>
-
-
-
-
-
-
-
-<%@include file="footer.jsp" %>
 

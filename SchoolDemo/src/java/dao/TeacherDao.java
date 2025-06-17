@@ -33,6 +33,7 @@ public class TeacherDao {
             
             ps.close();
             SchUtil.getCon().close();
+            
         } catch (SQLException ex) {
             Logger.getLogger(TeacherDao.class.getName()).log(Level.SEVERE, null, ex);
         }

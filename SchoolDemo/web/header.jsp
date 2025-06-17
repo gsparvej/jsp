@@ -38,7 +38,7 @@
 </nav>
       
       <div class="row">
-    <h2 class="bg-success text-center py-3">Munipur High School & College </h2>
+    <h2 class="bg-success text-center py-3">BAF Shaheen School & College Dhaka  </h2>
 </div>
 
     

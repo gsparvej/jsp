@@ -45,8 +45,8 @@ request.setAttribute("list", list);
                     <td>${s.tAddress}</td>
                     <td>${s.tContact}</td>
                      <td>
-                        <a href="/TeacherServlet?action=edit&tId=${s.tId}" class="btn btn-primary"> Edit </a>
-                        <a href="/TeacherServlet?action=delete&tId=${s.tId}" class="btn btn-danger" 
+                        <a href="teaServlet?action=edit&tId=${s.tId}" class="btn btn-primary"> Edit </a>
+                        <a href="teaServlet?action=delete&tId=${s.tId}" class="btn btn-danger" 
                            onclick="return confirm('Are you sure ! Want to delete this Teacher?');"> Delete </a>
                     </td>
                    

@@ -8,7 +8,7 @@
 
 <div class="container my-3">
     <div class="bg-success text-center">
-        <h1 class="jumborton">Add Teacher Info</h1>
+        <h1 class="jumborton">Add Teacher's Info</h1>
     </div>
     <!--    start form-->
     <form action="teaServlet"  method="post">

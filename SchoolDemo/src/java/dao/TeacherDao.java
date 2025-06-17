@@ -134,7 +134,7 @@ public class TeacherDao {
     
     public static int updateTeacher(Teacher t){
     int status=0;
-    sql="update teachers set tName=?, tDepartment=?, tSalary=?,tAddress=?, tContact=? where tId=?";
+    sql="update teachers set tName=?, tDepartment=?, tSalary=?, tAddress=?, tContact=? where tId=?";
     
         try {
             ps=SchUtil.getCon().prepareStatement(sql);

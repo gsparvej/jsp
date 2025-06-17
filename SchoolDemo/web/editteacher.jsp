@@ -10,7 +10,7 @@
 
 
 <%
-    Teacher t= (Teacher) request.getAttribute("teac");
+    Teacher t = (Teacher) request.getAttribute("teac");
 
 %>
 
@@ -22,6 +22,7 @@
     <!--    start form-->
     <form action="teaServlet"  method="post">
         <input type="hidden" name="action" value="update">
+        <input type="hidden" name="tId" value="<%= t.gettId() %>">
 
         <div class="row">
             <div class="col-md-6">
@@ -34,11 +35,11 @@
                 <select class="form-select" name="tDepartment"  aria-label="Default select example">
                     <option selected>Select Anyone</option>
 
-                    <option value="Bangla" <%= t.gettDepartment().eguals("Bangla") ? "selected" : "" %>>Bangla</option>
-                    <option value="English" <%= t.gettDepartment().eguals("English") ? "selected" : "" %>>English</option>
-                    <option value="Mathematics" <%= t.gettDepartment().eguals("Mathematics") ? "selected" : "" %>>Mathematics</option>
-                    <option value="Physics" <%= t.gettDepartment().eguals("Physics") ? "selected" : "" %>>Physics</option>
-                    <option value="Psychology" <%= t.gettDepartment().eguals("Psychology") ? "selected" : "" %>>Psychology</option>
+                    <option value="Bangla" <%= t.gettDepartment().equals("Bangla") ? "selected" : "" %>>Bangla</option>
+                    <option value="English" <%= t.gettDepartment().equals("English") ? "selected" : "" %>>English</option>
+                    <option value="Mathematics" <%= t.gettDepartment().equals("Mathematics") ? "selected" : "" %>>Mathematics</option>
+                    <option value="Physics" <%= t.gettDepartment().equals("Physics") ? "selected" : "" %>>Physics</option>
+                    <option value="Psychology" <%= t.gettDepartment().equals("Psychology") ? "selected" : "" %>>Psychology</option>
 
                 </select>
             </div>        

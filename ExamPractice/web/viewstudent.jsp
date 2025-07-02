@@ -40,8 +40,8 @@ request.setAttribute("list", list);
                     <td>${stu.getStuClass()}</td>
                     <td>${stu.getStuContact()}</td>
                      <td>
-                        <a href="#" class="btn btn-primary"> Edit </a>
-                        <a href="#" class="btn btn-danger" 
+                         <a href="editstudentform.jsp?stuId=${stu.stuId}" class="btn btn-primary"> Edit </a>
+                        <a href="deletestudent.jsp?stuId=${stu.stuId}" class="btn btn-danger" 
                            onclick="return confirm('Are you sure ! Want to delete this Employee?');"> Delete </a>
                     </td>
                    

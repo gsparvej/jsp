@@ -20,7 +20,8 @@
 
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">Student Class</label>
-                <select class="form-select" name="stuClass" aria-label="Default select example">
+                <input type="text" class="form-control" id="stuClass" name="stuClass" placeholder="Write Your Class">
+<!--                <select class="form-select" name="stuClass" aria-label="Default select example">
                     <option selected>Select Anyone</option>
                     <option value="Six">Six</option>
                     <option value="Seven">Seven</option>
@@ -28,7 +29,7 @@
                     <option value="Nine">Nine</option>
                     <option value="Ten">Ten</option>
                     
-                </select>
+                </select>-->
             </div>        
         </div>
         <!-- start 2nd row-->

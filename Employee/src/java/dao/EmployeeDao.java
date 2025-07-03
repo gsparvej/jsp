@@ -31,7 +31,7 @@ public class EmployeeDao {
             
                 Employee e=new Employee(rs.getInt("empId"),
                         rs.getString("name"),
-                        rs.getString("email"),
+                        rs.getString("designation"),
                         rs.getFloat("salary")
                 
                 );
@@ -52,12 +52,12 @@ public class EmployeeDao {
     public static int saveEmployee(Employee e){
     
         int status= 0;
-        sql="insert into employees (name,email,salary) values(?,?,?)";
+        sql="insert into employees (name,designation,salary) values(?,?,?)";
         try {
             ps=DbUtil.getCon().prepareStatement(sql);
             
             ps.setString(1, e.getName());
-            ps.setString(2, e.getEmail());
+            ps.setString(2, e.getDesignation());
             ps.setFloat(3, e.getSalary());
             
             status=ps.executeUpdate();
@@ -94,12 +94,12 @@ public class EmployeeDao {
     public static int updateEmployee(Employee e){
     
         int status=0;
-        sql="update employees set name=?,email=?,salary=? where empId=?";
+        sql="update employees set name=?,designation=?,salary=? where empId=?";
         try {
             ps=DbUtil.getCon().prepareStatement(sql);
             
             ps.setString(1,e.getName());
-            ps.setString(2,e.getEmail());
+            ps.setString(2,e.getDesignation());
             ps.setFloat(3, e.getSalary());
             ps.setInt(4, e.getEmpId());
             
@@ -130,7 +130,7 @@ public class EmployeeDao {
             while(rs.next()){
             em=new Employee(rs.getInt("empId"),
                     rs.getString("name"),
-                    rs.getString("email"),
+                    rs.getString("designation"),
                     rs.getFloat("salary")
             );
             

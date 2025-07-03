@@ -16,8 +16,8 @@
         </div>
         
          <div class="col-md-6">  
-            <label for="" class="form-label"> Email </label>
-            <input type="text" class="form-control" id="email" name="email" placeholder="example@gmail.com">
+            <label for="" class="form-label"> Designation </label>
+            <input type="text" class="form-control" id="designation" name="designation" placeholder="Software Engineer">
         </div>
         
     </div>
@@ -26,7 +26,7 @@
 <div class="row mt-3">
     <div class="col-md-6">
     <label class="form-label"> Salary </label>
-    <input type="number" class="form-control" id="salary" name="salary" >
+    <input type="text" class="form-control" id="salary" name="salary" >
     <input class="btn btn-success my-5" type="submit" value="Save">
 </div>
     
@@ -40,4 +40,4 @@
   
 </div>
 
-<%@include file="footer.jsp" %>
+<%--<%@include file="footer.jsp" %>--%>

@@ -27,8 +27,8 @@
             </div>
 
             <div class="col-md-6">  
-                <label for="" class="form-label"> Email </label>
-                <input type="text" class="form-control" id="email" name="email" value="<%=e.getEmail()%>" placeholder=" Update example@gmail.com">
+                <label for="" class="form-label"> Designation </label>
+                <input type="text" class="form-control" id="designation" name="designation" value="<%=e.getDesignation()%>" placeholder=" Update software Engineer">
             </div>
 
         </div>
@@ -37,7 +37,7 @@
         <div class="row mt-3">
             <div class="col-md-6">
                 <label class="form-label"> Salary </label>
-                <input type="number" class="form-control" id="salary" name="salary" value="<%=e.getSalary()%>" >
+                <input type="text" class="form-control" id="salary" name="salary" value="<%=e.getSalary()%>" >
 
             </div>
 
@@ -52,4 +52,4 @@
 
 </div>
 
-<%@include file="footer.jsp" %>
+<%--<%@include file="footer.jsp" %>--%>

@@ -6,22 +6,22 @@ public class Employee {
     
     private int empId;
     private String name;
-    private String email;
+    private String designation;
     private float salary;
 
     public Employee() {
     }
 
-    public Employee(int empId, String name, String email, float salary) {
+    public Employee(int empId, String name, String designation, float salary) {
         this.empId = empId;
         this.name = name;
-        this.email = email;
+        this.designation = designation;
         this.salary = salary;
     }
 
-    public Employee(String name, String email, float salary) {
+    public Employee(String name, String designation, float salary) {
         this.name = name;
-        this.email = email;
+        this.designation = designation;
         this.salary = salary;
     }
 
@@ -41,12 +41,12 @@ public class Employee {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDesignation() {
+        return designation;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDesignation(String designation) {
+        this.designation = designation;
     }
 
     public float getSalary() {
@@ -56,6 +56,8 @@ public class Employee {
     public void setSalary(float salary) {
         this.salary = salary;
     }
+
+   
     
     
 }

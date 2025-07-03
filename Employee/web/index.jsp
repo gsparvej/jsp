@@ -22,7 +22,7 @@ request.setAttribute("list",list);
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Email</th>
+                <th>Designation</th>
                 <th>Salary</th>
                 <th>Action</th>
             </tr>
@@ -32,7 +32,7 @@ request.setAttribute("list",list);
                 <tr>
                     <td>${e.getEmpId()}</td>
                     <td>${e.getName()}</td>
-                    <td>${e.getEmail()}</td>
+                    <td>${e.getDesignation()}</td>
                     <td>${e.getSalary()}</td>
                     
                     <td>
@@ -50,4 +50,4 @@ request.setAttribute("list",list);
     </table>
 </div>
 
-<%@include file="footer.jsp" %>
+<%--<%@include file="footer.jsp" %>--%>

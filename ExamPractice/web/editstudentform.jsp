@@ -20,7 +20,7 @@
     <!--    start form-->
 
     <form action="editstudent.jsp" method="post">
-        <input type="hidden" name="empId" value="<%=e.getStuId()%>"/>
+        <input type="hidden" name="stuId" value="<%=e.getStuId()%>"/>
 
         <div  class="row">
             <div class="col-md-6">  

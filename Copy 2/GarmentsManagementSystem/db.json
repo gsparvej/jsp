@@ -528,6 +528,22 @@
         "styleCode": "TAN123",
         "description": "Short Sleeve Shirt"
       }
+    },
+    {
+      "id": "e73c",
+      "serial": "1",
+      "material": "Woven Fabric",
+      "element": "Yards",
+      "quantity": 1.8795,
+      "unitPrice": 550,
+      "totalCost": 1033.725,
+      "uom": {
+        "result": 1.8795
+      },
+      "bom": {
+        "styleCode": "JHDG",
+        "description": "Shirt"
+      }
     }
   ],
   "bom": [
@@ -535,6 +551,11 @@
       "id": "d0c7",
       "styleCode": "TAN123",
       "description": "Short Sleeve Shirt"
+    },
+    {
+      "id": "a52c",
+      "styleCode": "JHDG",
+      "description": "Shirt"
     }
   ],
   "rawMaterials": [

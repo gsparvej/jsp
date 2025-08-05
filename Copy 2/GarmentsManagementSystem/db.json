@@ -732,6 +732,41 @@
       "orderStatus": {
         "status": "Completed"
       }
+    },
+    {
+      "id": "0a58",
+      "buyerOrganization": "fhfgh",
+      "shippingAddress": "hrythyt",
+      "orderDate": "2025-07-29",
+      "deliveryDate": "2025-11-04",
+      "shortSmallSize": 500,
+      "shortSPrice": 300,
+      "shortMediumSize": 500,
+      "shortMPrice": 320,
+      "shortLargeSize": 500,
+      "shortLPrice": 330,
+      "shortXLSize": 500,
+      "shortXLPrice": 350,
+      "fullSmallSize": 600,
+      "fullSPrice": 340,
+      "fullMediumSize": 600,
+      "fullMPrice": 360,
+      "fullLargeSize": 600,
+      "fullLPrice": 400,
+      "fullXLSize": 600,
+      "fullXLPrice": 450,
+      "subTotal": 1580000,
+      "vat": 12,
+      "paidAmount": 1000000,
+      "dueAmount": 580000.1200000001,
+      "total": 1580012,
+      "remarks": "good",
+      "bom": {
+        "styleCode": "TAN123"
+      },
+      "orderStatus": {
+        "status": "Confirmed"
+      }
     }
   ],
   "orderStatus": [

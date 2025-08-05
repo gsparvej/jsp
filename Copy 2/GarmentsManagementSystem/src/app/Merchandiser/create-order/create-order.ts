@@ -18,12 +18,25 @@ export class CreateOrder implements OnInit {
     shippingAddress!: string;
     orderDate!: Date;
     deliveryDate!: Date;
-    smallSize!: number;
-    sPrice!: number;
-    mediumSize!: number;
-    mPrice!: number;
-    largeSize!: number;
-    lPrice!: number;
+
+    shortSmallSize!: number;
+    shortSPrice!: number;
+    shortMediumSize!: number;
+    shortMPrice!: number;
+    shortLargeSize!: number;
+    shortLPrice!: number;
+    shortXLSize!: number;
+    shortXLPrice!: number;
+
+    fullSmallSize!: number;
+    fullSPrice!: number;
+    fullMediumSize!: number;
+    fullMPrice!: number;
+    fullLargeSize!: number;
+    fullLPrice!: number;
+    fullXLSize!: number;
+    fullXLPrice!: number;
+
     subTotal!:number;
     vat!: number;
     paidAmount!: number;
@@ -50,12 +63,26 @@ export class CreateOrder implements OnInit {
       shippingAddress: ['', Validators.required],
       orderDate: ['', Validators.required],
       deliveryDate: ['', Validators.required],
-      smallSize: [''],
-      sPrice: [''],
-      mediumSize: [''],
-      mPrice: [''],
-      largeSize: [''],
-      lPrice: [''],
+
+      shortSmallSize: [''],
+      shortSPrice: [''],
+      shortMediumSize: [''],
+      shortMPrice: [''],
+      shortLargeSize: [''],
+      shortLPrice: [''],
+      shortXLSize: [''],
+      shortXLPrice: [''],
+
+
+      fullSmallSize: [''],
+      fullSPrice: [''],
+      fullMediumSize: [''],
+      fullMPrice: [''],
+      fullLargeSize: [''],
+      fullLPrice: [''],
+      fullXLSize: [''],
+      fullXLPrice: [''],
+
       subTotal: [''],
       vat: [''],
       paidAmount: [''],
@@ -73,16 +100,16 @@ export class CreateOrder implements OnInit {
     });
 
     //  Subscribe for Style Code Changes
-    this.orderForm.get('bom')?.get('styleCode')?.valueChanges.subscribe(styleCode => {
-      const selectedDescription = this.styleCode.find(b => b.styleCode === styleCode);
+    this.orderForm.get('bom')?.get('id')?.valueChanges.subscribe(id => {
+      const selectedDescription = this.styleCode.find(b => b.id === id);
       if (selectedDescription) {
         this.orderForm.patchValue({ bom: selectedDescription });
       }
     });
 
     //  Subscribe for Order Status Changes
-    this.orderForm.get('orderStatus')?.get('status')?.valueChanges.subscribe(statusValue => {
-      const selectedStatus = this.status.find(s => s.status === statusValue);
+    this.orderForm.get('orderStatus')?.get('id')?.valueChanges.subscribe(id => {
+      const selectedStatus = this.status.find(s => s.id === id);
       if (selectedStatus) {
         this.orderForm.patchValue({ orderStatus: selectedStatus });
       }
@@ -147,27 +174,69 @@ export class CreateOrder implements OnInit {
 
 
   subTotalCalculation(): void{
-    this.smallSize = this.orderForm.value.smallSize;
-    this.sPrice = this.orderForm.value.sPrice;
-    this.mediumSize = this.orderForm.value.mediumSize;
-    this.mPrice = this.orderForm.value.mPrice;
-    this.largeSize = this.orderForm.value.largeSize;
-    this.lPrice = this.orderForm.value.lPrice;
 
-    this.subTotal = (this.smallSize* this.sPrice) + (this.mediumSize* this.mPrice )+ (this.largeSize* this.lPrice);
+    this.shortSmallSize = this.orderForm.value.shortSmallSize;
+    this.shortSPrice = this.orderForm.value.shortSPrice;
+    this.shortMediumSize = this.orderForm.value.shortMediumSize;
+    this.shortMPrice = this.orderForm.value.shortMPrice;
+    this.shortLargeSize = this.orderForm.value.shortLargeSize;
+    this.shortLPrice = this.orderForm.value.shortLPrice;
+    this.shortXLSize = this.orderForm.value.shortXLSize;
+    this.shortXLPrice = this.orderForm.value.shortXLPrice;
+
+    this.fullSmallSize = this.orderForm.value.fullSmallSize;
+    this.fullSPrice = this.orderForm.value.fullSPrice;
+    this.fullMediumSize = this.orderForm.value.fullMediumSize;
+    this.fullMPrice = this.orderForm.value.fullMPrice;
+    this.fullLargeSize = this.orderForm.value.fullLargeSize;
+    this.fullLPrice = this.orderForm.value.fullLPrice;
+    this.fullXLSize = this.orderForm.value.fullXLSize;
+    this.fullXLPrice = this.orderForm.value.fullXLPrice;
+
+
+
+    this.subTotal = (this.shortSmallSize* this.shortSPrice) + 
+                    (this.shortMediumSize* this.shortMPrice )+
+                     (this.shortLargeSize* this.shortLPrice)+
+                     (this.shortXLSize* this.shortXLPrice)+
+                     (this.fullSmallSize* this.fullSPrice) + 
+                    (this.fullMediumSize* this.fullMPrice )+
+                     (this.fullLargeSize* this.fullLPrice)+
+                     (this.fullXLSize* this.fullXLPrice);
     
 
   }
   dueAmountCalculation(){
     
-    this.smallSize = this.orderForm.value.smallSize;
-    this.sPrice = this.orderForm.value.sPrice;
-    this.mediumSize = this.orderForm.value.mediumSize;
-    this.mPrice = this.orderForm.value.mPrice;
-    this.largeSize = this.orderForm.value.largeSize;
-    this.lPrice = this.orderForm.value.lPrice;
+    this.shortSmallSize = this.orderForm.value.shortSmallSize;
+    this.shortSPrice = this.orderForm.value.shortSPrice;
+    this.shortMediumSize = this.orderForm.value.shortMediumSize;
+    this.shortMPrice = this.orderForm.value.shortMPrice;
+    this.shortLargeSize = this.orderForm.value.shortLargeSize;
+    this.shortLPrice = this.orderForm.value.shortLPrice;
+    this.shortXLSize = this.orderForm.value.shortXLSize;
+    this.shortXLPrice = this.orderForm.value.shortXLPrice;
 
-    this.subTotal = (this.smallSize* this.sPrice) + (this.mediumSize* this.mPrice )+ (this.largeSize* this.lPrice);
+    this.fullSmallSize = this.orderForm.value.fullSmallSize;
+    this.fullSPrice = this.orderForm.value.fullSPrice;
+    this.fullMediumSize = this.orderForm.value.fullMediumSize;
+    this.fullMPrice = this.orderForm.value.fullMPrice;
+    this.fullLargeSize = this.orderForm.value.fullLargeSize;
+    this.fullLPrice = this.orderForm.value.fullLPrice;
+    this.fullXLSize = this.orderForm.value.fullXLSize;
+    this.fullXLPrice = this.orderForm.value.fullXLPrice;
+
+
+
+    this.subTotal = (this.shortSmallSize* this.shortSPrice) + 
+                    (this.shortMediumSize* this.shortMPrice )+
+                     (this.shortLargeSize* this.shortLPrice)+
+                     (this.shortXLSize* this.shortXLPrice)+
+                     (this.fullSmallSize* this.fullSPrice) + 
+                    (this.fullMediumSize* this.fullMPrice )+
+                     (this.fullLargeSize* this.fullLPrice)+
+                     (this.fullXLSize* this.fullXLPrice);
+
     this.vat = this.orderForm.value.vat;
     this.paidAmount = this.orderForm.value.paidAmount;
 
@@ -175,14 +244,34 @@ export class CreateOrder implements OnInit {
   }
 
   totalCalculations() {
-     this.smallSize = this.orderForm.value.smallSize;
-    this.sPrice = this.orderForm.value.sPrice;
-    this.mediumSize = this.orderForm.value.mediumSize;
-    this.mPrice = this.orderForm.value.mPrice;
-    this.largeSize = this.orderForm.value.largeSize;
-    this.lPrice = this.orderForm.value.lPrice;
+     this.shortSmallSize = this.orderForm.value.shortSmallSize;
+    this.shortSPrice = this.orderForm.value.shortSPrice;
+    this.shortMediumSize = this.orderForm.value.shortMediumSize;
+    this.shortMPrice = this.orderForm.value.shortMPrice;
+    this.shortLargeSize = this.orderForm.value.shortLargeSize;
+    this.shortLPrice = this.orderForm.value.shortLPrice;
+    this.shortXLSize = this.orderForm.value.shortXLSize;
+    this.shortXLPrice = this.orderForm.value.shortXLPrice;
 
-    this.subTotal = (this.smallSize* this.sPrice) + (this.mediumSize* this.mPrice )+ (this.largeSize* this.lPrice);
+    this.fullSmallSize = this.orderForm.value.fullSmallSize;
+    this.fullSPrice = this.orderForm.value.fullSPrice;
+    this.fullMediumSize = this.orderForm.value.fullMediumSize;
+    this.fullMPrice = this.orderForm.value.fullMPrice;
+    this.fullLargeSize = this.orderForm.value.fullLargeSize;
+    this.fullLPrice = this.orderForm.value.fullLPrice;
+    this.fullXLSize = this.orderForm.value.fullXLSize;
+    this.fullXLPrice = this.orderForm.value.fullXLPrice;
+
+
+
+    this.subTotal = (this.shortSmallSize* this.shortSPrice) + 
+                    (this.shortMediumSize* this.shortMPrice )+
+                     (this.shortLargeSize* this.shortLPrice)+
+                     (this.shortXLSize* this.shortXLPrice)+
+                     (this.fullSmallSize* this.fullSPrice) + 
+                    (this.fullMediumSize* this.fullMPrice )+
+                     (this.fullLargeSize* this.fullLPrice)+
+                     (this.fullXLSize* this.fullXLPrice);
     this.vat = this.orderForm.value.vat;
     this.total = this.subTotal + this.vat;
   }

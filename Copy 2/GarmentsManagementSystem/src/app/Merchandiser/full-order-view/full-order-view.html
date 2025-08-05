@@ -42,6 +42,7 @@
       </div>
 
       <!-- Size & Price Table -->
+       <h4 class="text-center" >Short Sleeve Shirt</h4>
       <div class="table-responsive mb-4">
         <table class="table table-bordered text-center align-middle">
           <thead class="table-light">
@@ -54,22 +55,63 @@
           <tbody>
             <tr>
               <td>S</td>
-              <td>{{ order.smallSize }}</td>
-              <td>{{ order.sPrice }}</td>
+              <td>{{ order.shortSmallSize }}</td>
+              <td>{{ order.shortSPrice }}</td>
             </tr>
             <tr>
               <td>M</td>
-              <td>{{ order.mediumSize }}</td>
-              <td>{{ order.mPrice }}</td>
+              <td>{{ order.shortMediumSize }}</td>
+              <td>{{ order.shortMPrice }}</td>
             </tr>
             <tr>
               <td>L</td>
-              <td>{{ order.largeSize }}</td>
-              <td>{{ order.lPrice }}</td>
+              <td>{{ order.shortLargeSize }}</td>
+              <td>{{ order.shortLPrice }}</td>
+            </tr>
+             <tr>
+              <td>XL</td>
+              <td>{{ order.shortXLSize }}</td>
+              <td>{{ order.shortXLPrice }}</td>
             </tr>
           </tbody>
         </table>
       </div>
+
+       <h4 class="text-center" >Full Sleeve Shirt</h4>
+      <div class="table-responsive mb-4">
+        <table class="table table-bordered text-center align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>Size</th>
+              <th>Quantity</th>
+              <th>Unit Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>S</td>
+              <td>{{ order.fullSmallSize }}</td>
+              <td>{{ order.fullSPrice }}</td>
+            </tr>
+            <tr>
+              <td>M</td>
+              <td>{{ order.fullMediumSize }}</td>
+              <td>{{ order.fullMPrice }}</td>
+            </tr>
+            <tr>
+              <td>L</td>
+              <td>{{ order.fullLargeSize }}</td>
+              <td>{{ order.fullLPrice }}</td>
+            </tr>
+             <tr>
+              <td>XL</td>
+              <td>{{ order.fullXLSize }}</td>
+              <td>{{ order.fullXLPrice }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
 
       <!-- Status & Remarks -->
       <div class="row mb-4">

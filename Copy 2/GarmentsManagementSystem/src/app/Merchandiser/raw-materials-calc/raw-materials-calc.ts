@@ -36,83 +36,48 @@ export class RawMaterialsCalc implements OnInit {
         mediumSize: [''],
         largeSize: ['']
       }),
-      uom: this.fb.array([])  // FormArray for multiple UOM selections
+      uom: this.fb.group({
+        id: [''],
+        productName: [''],
+        size: [''],
+        result: ['']
+      }),
+      bomView: this.fb.group({
+        id: [''],
+        material: [''],
+        quantity: ['']
+      })
     });
 
     this.loadOrder();
+    this.loadUom();
+    this.loadAllBomView();
 
-    // Add one initial UOM selection field by default
-    this.addUom();
-
-    // Subscribe to changes on order id to update sizes
-    this.formRawMaterials.get('order.id')?.valueChanges.subscribe(orderId => {
-      this.onOrderSelected(orderId);
-    });
-  }
-
-  // Getter for convenience to access the UOM FormArray
-  get uomArray(): FormArray {
-    return this.formRawMaterials.get('uom') as FormArray;
-  }
-
-  // Add a new UOM FormGroup to the FormArray
-  addUom(): void {
-    const group = this.fb.group({
-      id: [''],
-      size: [''],
-      result: ['0']
-    });
-
-    this.uomArray.push(group);
-  }
-
-  // When order is selected, patch size fields
-  onOrderSelected(orderId: string): void {
-    if (!orderId) {
-      this.formRawMaterials.get('order')?.patchValue({
-        smallSize: '',
-        mediumSize: '',
-        largeSize: ''
-      });
-      return;
-    }
-
-    const selectedOrder = this.order.find(o => o.id === orderId);
-    if (selectedOrder) {
-      this.formRawMaterials.get('order')?.patchValue({
-        smallSize: selectedOrder.smallSize || '',
-        mediumSize: selectedOrder.mediumSize || '',
-        largeSize: selectedOrder.largeSize || ''
-      });
-    }
-  }
-
-  // Save the raw materials data
-  addRawMaterials(): void {
-    const formValue = this.formRawMaterials.value;
-
-    const rawMaterials: RawMaterialsModel = {
-      id: undefined,
-      totalQuantity: 0,  // Adjust as per your logic
-      order: formValue.order,
-      uom: formValue.uom,
-      bomView: this.bomView[0] || {} as Bomview
-    };
-
-    this.merchandiserService.saveRawMaterials(rawMaterials).subscribe({
-      next: (bomview) => {
-        console.log(bomview, 'Raw Materials Saved Successfully!');
-        this.loadOrder();
-        this.formRawMaterials.reset();
-        this.uomArray.clear();
-        this.addUom();
-        this.router.navigate(['']);
-      },
-      error: (err) => {
-        console.error('Save failed:', err);
+      this.formRawMaterials.get('order.id')?.valueChanges.subscribe(id => {
+      const selected = this.order.find(or => or.id === id);
+      if (selected) {
+        this.formRawMaterials.patchValue({ order: selected });
       }
     });
+
+
+       this.formRawMaterials.get('uom.id')?.valueChanges.subscribe(id => {
+      const selected = this.uom.find(uom => uom.id === id);
+      if (selected) {
+        this.formRawMaterials.patchValue({ uom: selected });
+      }
+    });
+
+     this.formRawMaterials.get('bomView.id')?.valueChanges.subscribe(id => {
+      const selected = this.bomView.find(bomView => bomView.id === id);
+      if (selected) {
+        this.formRawMaterials.patchValue({ bomView: selected });
+      }
+    });
+
   }
+
+
 
   loadOrder(): void {
     this.merchandiserService.getAllOrder().subscribe({
@@ -122,6 +87,29 @@ export class RawMaterialsCalc implements OnInit {
       },
       error: (err) => {
         console.error(err);
+      }
+    });
+  }
+
+  loadUom(): void {
+    this.merchandiserService.getAllUom().subscribe({
+      next: res=> {
+        this.uom = res;
+        this.cdr.markForCheck();
+      },
+      error: err=> {
+        console.log(err);
+      }
+    });
+  }
+  loadAllBomView(): void {
+    this.merchandiserService.getAllBomView().subscribe({
+      next: res=> {
+        this.bomView = res;
+        this.cdr.markForCheck();
+      },
+      error: err=> {
+        console.log(err);
       }
     });
   }

@@ -8,12 +8,29 @@ export class Order{
     shippingAddress!: string;
     orderDate!: Date;
     deliveryDate!: Date;
-    smallSize!: number;
-    sPrice!: number;
-    mediumSize!: number;
-    mPrice!: number;
-    largeSize!: number;
-    lPrice!: number;
+
+    shortSmallSize!: number;
+    shortSPrice!: number;
+    shortMediumSize!: number;
+    shortMPrice!: number;
+    shortLargeSize!: number;
+    shortLPrice!: number;
+    shortXLSize!: number;
+    shortXLPrice!: number;
+
+
+    fullSmallSize!: number;
+    fullSPrice!: number;
+    fullMediumSize!: number;
+    fullMPrice!: number;
+    fullLargeSize!: number;
+    fullLPrice!: number;
+    fullXLSize!: number;
+    fullXLPrice!: number;
+
+
+
+
     subTotal!:number;
     vat!: number;
     paidAmount!: number;

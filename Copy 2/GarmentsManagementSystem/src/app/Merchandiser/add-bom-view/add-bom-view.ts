@@ -83,7 +83,7 @@ export class AddBomView implements OnInit {
       const selectedStatus = this.uom.find(s => s.result === result);
       if (selectedStatus) {
 
-        this.formBomView.patchValue({ atten_status: selectedStatus });
+        this.formBomView.patchValue({ uom: selectedStatus });
       }
     });
   }

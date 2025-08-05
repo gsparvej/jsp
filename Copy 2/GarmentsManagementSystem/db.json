@@ -171,6 +171,17 @@
         "id": "638f",
         "name": "Md. Parvej Hossen"
       }
+    },
+    {
+      "id": "8692",
+      "attDate": "2025-08-05T15:00",
+      "atten_status": {
+        "status": "Present"
+      },
+      "employees": {
+        "id": "b527",
+        "name": "Md. Rakib Islam"
+      }
     }
   ],
   "atten_status": [
@@ -265,6 +276,19 @@
       "status": {
         "id": "2",
         "status": "Approve"
+      }
+    },
+    {
+      "id": "7864",
+      "leaveType": "Marriage",
+      "fromDate": "2025-08-04",
+      "toDate": "2025-08-09",
+      "leave_status": {
+        "status": "Pending"
+      },
+      "employees": {
+        "id": "455a",
+        "name": "Md. Eiasin Prodhan"
       }
     }
   ],
@@ -430,6 +454,17 @@
       "wastage": 2,
       "shrinkage": 3,
       "result": 1.533
+    },
+    {
+      "id": "2327",
+      "productName": "shirt",
+      "size": "S",
+      "body": 1.52,
+      "sleeve": 0.1,
+      "pocket": 0.12,
+      "wastage": 2,
+      "shrinkage": 3,
+      "result": 1.8270000000000002
     }
   ],
   "bomview": [
@@ -1119,6 +1154,12 @@
       "itemId": "11c1",
       "quantity": 100,
       "receivedTransactionDate": "2025-07-23"
+    },
+    {
+      "id": "c8a6",
+      "itemId": "0ec8",
+      "quantity": 500,
+      "receivedTransactionDate": "2025-08-07"
     }
   ],
   "inventories": [
@@ -1128,7 +1169,7 @@
       "id": "11c1"
     },
     {
-      "quantity": 10,
+      "quantity": 510,
       "categoryName": "Plastic Button",
       "id": "0ec8"
     },

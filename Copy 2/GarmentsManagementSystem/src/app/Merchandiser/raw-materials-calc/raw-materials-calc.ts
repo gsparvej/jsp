@@ -26,15 +26,30 @@ export class RawMaterialsCalc implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private cdr: ChangeDetectorRef
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.formRawMaterials = this.fb.group({
       order: this.fb.group({
         id: [''],
-        smallSize: [''],
-        mediumSize: [''],
-        largeSize: ['']
+        shortSmallSize: [''],
+        shortSPrice: [''],
+        shortMediumSize: [''],
+        shortMPrice: [''],
+        shortLargeSize: [''],
+        shortLPrice: [''],
+        shortXLSize: [''],
+        shortXLPrice: [''],
+
+
+        fullSmallSize: [''],
+        fullSPrice: [''],
+        fullMediumSize: [''],
+        fullMPrice: [''],
+        fullLargeSize: [''],
+        fullLPrice: [''],
+        fullXLSize: [''],
+        fullXLPrice: [''],
       }),
       uom: this.fb.group({
         id: [''],
@@ -53,7 +68,7 @@ export class RawMaterialsCalc implements OnInit {
     this.loadUom();
     this.loadAllBomView();
 
-      this.formRawMaterials.get('order.id')?.valueChanges.subscribe(id => {
+    this.formRawMaterials.get('order.id')?.valueChanges.subscribe(id => {
       const selected = this.order.find(or => or.id === id);
       if (selected) {
         this.formRawMaterials.patchValue({ order: selected });
@@ -61,14 +76,14 @@ export class RawMaterialsCalc implements OnInit {
     });
 
 
-       this.formRawMaterials.get('uom.id')?.valueChanges.subscribe(id => {
+    this.formRawMaterials.get('uom.id')?.valueChanges.subscribe(id => {
       const selected = this.uom.find(uom => uom.id === id);
       if (selected) {
         this.formRawMaterials.patchValue({ uom: selected });
       }
     });
 
-     this.formRawMaterials.get('bomView.id')?.valueChanges.subscribe(id => {
+    this.formRawMaterials.get('bomView.id')?.valueChanges.subscribe(id => {
       const selected = this.bomView.find(bomView => bomView.id === id);
       if (selected) {
         this.formRawMaterials.patchValue({ bomView: selected });
@@ -93,22 +108,22 @@ export class RawMaterialsCalc implements OnInit {
 
   loadUom(): void {
     this.merchandiserService.getAllUom().subscribe({
-      next: res=> {
+      next: res => {
         this.uom = res;
         this.cdr.markForCheck();
       },
-      error: err=> {
+      error: err => {
         console.log(err);
       }
     });
   }
   loadAllBomView(): void {
     this.merchandiserService.getAllBomView().subscribe({
-      next: res=> {
+      next: res => {
         this.bomView = res;
         this.cdr.markForCheck();
       },
-      error: err=> {
+      error: err => {
         console.log(err);
       }
     });

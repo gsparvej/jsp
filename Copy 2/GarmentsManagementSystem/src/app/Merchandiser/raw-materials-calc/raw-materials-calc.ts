@@ -117,6 +117,8 @@ export class RawMaterialsCalc implements OnInit {
       }
     });
   }
+
+
   loadAllBomView(): void {
     this.merchandiserService.getAllBomView().subscribe({
       next: res => {
@@ -128,6 +130,11 @@ export class RawMaterialsCalc implements OnInit {
       }
     });
   }
+
+
+  
+
+
 
 
 
